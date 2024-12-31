@@ -4,6 +4,7 @@ from text_ann_transfer import (
     transfer_coordinate_difflib,
     transfer_coordinate_google,
     transfer_coordinate_levenshtein,
+    transfer_coordinate_openpecha,
 )
 
 
@@ -12,6 +13,12 @@ class TestTextAnnTransferAlgorithms(TestCase):
         self.source_text = "Hello World!"
         self.target_text = "Hello, World!"
         self.source_coordinate = 6  # Position of 'w' in source_text
+
+    def test_transfer_coordinate_openpecha(self):
+        target_coordinate = transfer_coordinate_openpecha(
+            self.source_text, self.target_text, self.source_coordinate
+        )
+        self.assertEqual(target_coordinate, 7)
 
     def test_transfer_coordinate_google(self):
         target_coordinate = transfer_coordinate_google(

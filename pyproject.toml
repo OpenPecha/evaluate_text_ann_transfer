@@ -20,7 +20,8 @@ classifiers = [
 dependencies = [
   "distlib == 0.3.9",
   "Levenshtein == 0.26.1",
-  "diff-match-patch == 20241021",
+  "diff-match-patch == 20230430",
+  "openpecha @ git+https://github.com/OpenPecha/toolkit-v2.git"
 ]
 
 [project.optional-dependencies]

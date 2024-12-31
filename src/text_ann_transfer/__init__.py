@@ -2,6 +2,15 @@ import difflib
 
 import Levenshtein
 from diff_match_patch import diff_match_patch
+from openpecha.pecha.blupdate import Blupdate
+
+
+def transfer_coordinate_openpecha(
+    source_text: str, target_text: str, source_coordinate: int
+):
+    blupdate = Blupdate(source_text, target_text)
+    target_coordinate = blupdate.get_updated_coord(source_coordinate)
+    return target_coordinate
 
 
 def transfer_coordinate_google(
