@@ -2,7 +2,6 @@ import difflib
 
 import Levenshtein
 from diff_match_patch import diff_match_patch
-from fuzzywuzzy import fuzz, process
 
 
 def transfer_coordinate_google(
@@ -28,14 +27,6 @@ def transfer_coordinate_difflib(
             return block.b + (source_coordinate - block.a)
 
     return source_coordinate  # fallback if no match found
-
-
-def transfer_coordinate_fuzzywuzzy(
-    source_text: str, target_text: str, source_coordinate: int
-):
-    _ = fuzz.ratio(source_text[:source_coordinate], target_text)  # Return ratio
-    best_match = process.extractOne(source_text[:source_coordinate], [target_text])
-    return len(best_match[0])
 
 
 def transfer_coordinate_levenshtein(
