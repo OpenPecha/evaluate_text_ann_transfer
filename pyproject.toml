@@ -3,18 +3,25 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "project_name"
+name = "text_ann_transfer"
 version = "0.0.1"
 authors = [
   { name="OpenPecha", email="dev@openpecha.org" },
 ]
-description = "A small example package"
+description = "Evaluating text ann transfer"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "distlib == 0.3.9",
+  "Levenshtein == 0.26.1",
+  "diff-match-patch == 20230430",
+  "openpecha @ git+https://github.com/OpenPecha/toolkit-v2.git"
 ]
 
 [project.optional-dependencies]
