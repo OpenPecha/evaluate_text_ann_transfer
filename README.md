@@ -25,7 +25,7 @@ This project is intended for _Data Engineers or ML Engineers_ who wants to _tran
 
 ## Project dependencies
 Before using _this python_, ensure you have:
-* python >= _3.8_
+* python >= _3.9_
 * _Proper Network Connection_
 
 ## How to get help
